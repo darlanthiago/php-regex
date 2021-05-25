@@ -3,7 +3,6 @@
 
 if (!empty($_POST)) {
 
-
   $placa_carro = addslashes($_POST['placa_carro']);
   $cpf = addslashes($_POST['cpf']);
   $email = addslashes($_POST['email']);
@@ -74,7 +73,6 @@ if (!empty($_POST)) {
 
     return $messages;
   }
-
 
   $validate = validate($placa_carro, $cpf, $email);
 
