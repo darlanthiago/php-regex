@@ -89,7 +89,7 @@
       <form action="#" method="POST">
 
         <label for="placa_carro">Placa de Carro: </label>
-        <input type="text" name="placa_carro" id="placa_carro">
+        <input type="text" name="placa_carro" id="placa_carro" value="<?= !empty($_GET['placaValue']) ? $_GET['placaValue'] : ''  ?>">
 
         <?php if (isset($_GET['placa'])) { ?>
           <?php if ($_GET['placa'] == 1) { ?>
@@ -101,7 +101,7 @@
 
 
         <label for="cpf">CPF: </label>
-        <input type="number" name="cpf" id="cpf">
+        <input type="text" name="cpf" id="cpf" value="<?= !empty($_GET['cpfValue']) ? $_GET['cpfValue'] : ''  ?>">
         <?php if (isset($_GET['cpf'])) { ?>
           <?php if ($_GET['cpf'] == 1) { ?>
             <span style="color: #2ed573">*CPF válido</span>
@@ -111,7 +111,7 @@
         <?php } ?>
 
         <label for="email">E-mail: </label>
-        <input type="text" name="email" id="email">
+        <input type="text" name="email" id="email" value="<?= !empty($_GET['emailValue']) ? $_GET['emailValue'] : ''  ?>">
         <?php if (isset($_GET['email'])) { ?>
           <?php if ($_GET['email'] == 1) { ?>
             <span style="color: #2ed573">*E-mail válido</span>
