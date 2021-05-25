@@ -20,7 +20,7 @@ if (!empty($_POST)) {
       $messages['placa_carro'] = 0;
     }
 
-    if (strlen($cpf) == 11) {
+    if (strlen($cpf) >= 11 || strlen($cpf) <= 14) {
 
       $cpf_formatted = preg_replace('/^([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{2})$/', '$1.$2.$3-$4', $cpf);
 
@@ -46,5 +46,10 @@ if (!empty($_POST)) {
 
   $validate = validate($placa_carro, $cpf, $email);
 
-  header("Location: index.php?placa=" . $validate['placa_carro'] . "&&cpf=" . $validate['cpf'] . "&&email=" . $validate['email']);
+  header(
+    "Location: index.php?placa=" .
+      $validate['placa_carro'] . "&&placaValue=" . $placa_carro .
+      "&&cpf=" . $validate['cpf'] . "&&cpfValue=" . $cpf .
+      "&&email=" . $validate['email'] . "&&emailValue=" . $email
+  );
 }
